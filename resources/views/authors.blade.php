@@ -13,6 +13,7 @@
               <ul>
                   @foreach($author->books as $book)
                       <li class="mx-5"><p>{{ $book->title }}</p></li>
+                      <img class="img-fluid w-25" src="{{$book->cover_image}}">
                   @endforeach
               </ul>
           @endforeach
