@@ -32,7 +32,11 @@ body {
 /* index.php */
 
 .hover-block {
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.8s ease, color 0.5s ease;
+}
+
+.search {
+    transition: background-color 0.8s ease, color 0.5s ease;
 }
 
 .hover-block:hover,
@@ -40,5 +44,31 @@ body {
     background-color: #a3caec !important;
     cursor: pointer !important;
     color : #667799 !important;
+}
+.color-text{
+    color : #f6f7f8 !important;
+}
+    .color-text:hover{
+        color : #667799 !important;
+    }
+
+.hover-block:hover .hide-text{
+    color: #a3caec !important;
+}
+.hover-block:hover .img-fluid.book{
+    transform: scale(1.22);
+    padding-bottom: 0.4em !important;
+    transition: all 3s ease;
+
+
+}
+.hover-block:hover p{
+    transform: scale(1.4);
+    transition: all 2s ease;
+    align-content: center !important;
+    padding-left: 2em !important;
+    color : #667799 !important;
+
+
 }
 

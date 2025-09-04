@@ -8,9 +8,9 @@
             <!-- 1 блок -->
             <div class="col-12">
                 <div class="bg-light rounded p-3 align-items-center hover-block position-relative">
-                    <h1 class="text-center">Наши книги</h1>
+                    <h1 class="text-center hide-text">Наши книги</h1>
                     <div class="d-flex justify-content-center w-md-50 w-lg-50">
-                        <img class="img-fluid" src="{{ asset('img/book-png-2.png') }}" alt="book">
+                        <img class="img-fluid book" src="{{ asset('img/book-png-2.png') }}" alt="book">
                     </div>
                     <a href="/books" class="stretched-link"></a>
                 </div>
@@ -19,10 +19,10 @@
             <!-- 2 блок -->
             <div class="col-12 col-md-6">
                 <div class="bg-light rounded hover-block w-100 h-100 d-flex flex-column justify-content-between position-relative p-3 pb-0 mb-0">
-                    <h2 class="text-center my-3">Наши авторы</h2>
+                    <h1 class="text-center my-3 hide-text">Наши авторы</h1>
                     <div class="d-flex align-items-center justify-content-end flex-column flex-md-row gap-3">
-                        <p class="w-50 m-0 d-none d-md-block ps-3" style="font-family: Arial;">
-                            Здесь можно почитать о наших авторах
+                        <p class="w-50 m-0 d-none d-md-block ps-3 color-text" style="font-family: Arial;">
+                            Здесь можно почитать об авторах.
                         </p>
                         <img class="img-fluid" style="width: 13em;" src="{{ asset('img/dostoevskii.png') }}" alt="book">
                     </div>
@@ -33,22 +33,18 @@
             <!-- 3 блок -->
             <div class="col-12 col-md-6">
                 <div class="bg-light rounded hover-block w-100 h-100 d-flex flex-column justify-content-between position-relative p-3 pb-0 mb-0">
-                    <h2 class="text-center my-3">О нас</h2>
+                    <h1 class="text-center my-3 hide-text">О нас</h1>
                     <div class="d-flex align-items-center flex-column flex-md-row gap-3 pb-0 mb-0">
                         <img class="img-fluid" style="width: 7em;" src="{{ asset('img/mem.png') }}" alt="book">
-                        <p class="w-50 m-0 d-none d-md-block ps-md-0 ps-5" style="font-family: Arial;">
+                        <p class="w-50 m-0 d-none d-md-block ps-md-0 ps-5 color-text" style="font-family: Arial;">
                             Хотите узнать о нас?
-                            Переходите в раздел.
+                            Переходите в раздел!
                         </p>
                     </div>
                     <a href="/about" class="stretched-link"></a>
                 </div>
             </div>
         </div>
-
-
-
-
 
         <h1 class="text-start">Специальные предложения:</h1>
 
@@ -107,8 +103,8 @@
         <h1 class="text-start">Популярные книги:</h1>
 
         <div class="row g-3 mb-5">
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="bg-light p-3 rounded">
+            <div class="col-12 col-md-6 col-lg-3 ">
+                <div class="bg-light p-3 rounded hover-block">
                     <pre>
     asdasdasd
     dsasda

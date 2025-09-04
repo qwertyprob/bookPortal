@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Author extends Model
+class Genre extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'bio',
-    ];
+    protected $fillable = ['name'];
 
-    // связь "многие ко многим" с книгами
+    // книги, относящиеся к жанру
     public function books()
     {
         return $this->belongsToMany(Book::class);
