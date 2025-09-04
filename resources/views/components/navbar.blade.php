@@ -1,6 +1,6 @@
 
 
-  <div class="container custom-container fixed-top"  style="background-color: white !important;">
+<div class="container custom-container fixed-top"  style="background-color: white !important;">
   <div class="navbar-custom p-2">
     <!-- Левая группа ссылок -->
     <div class="nav-group-left ms-0 ms-sm-4">
@@ -36,7 +36,7 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
 </div>
 
 <script src="{{ asset('js/dropdown-scroll-blocker.js') }}"></script>

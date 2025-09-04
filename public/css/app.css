@@ -28,3 +28,17 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* index.php */
+
+.hover-block {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.hover-block:hover,
+.hover-block:active{
+    background-color: #a3caec !important;
+    cursor: pointer !important;
+    color : #667799 !important;
+}
+
