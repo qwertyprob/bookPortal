@@ -19,12 +19,23 @@ Route::get('/books', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
 Route::get('/authors', function () {
     $authors = Author::all();
     $books = Book::all();
 
 
     return view('authors', ['authors' => $authors]);
+});
+
+//auth
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+
+Route::get('/login', function () {
+    return view('auth.login');
 });
 
 

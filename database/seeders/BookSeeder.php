@@ -33,7 +33,16 @@ class BookSeeder extends Seeder
             'description' => 'Роман в стихах.',
             'published_year' => 1833,
             'pages' => 320,
-            'cover_image' => 'https://cdn.ast.ru/v2/ASE000000000718282/COVER/cover1__w340.jpg'
+            'cover_image' => 'https://cdn.ast.ru/v2/ASE000000000718282/COVER/cover1__w340.jpg',
+
+        ]);
+
+        $book4 = Book::create([
+            'title' => 'Братья Карамазовы',
+            'description' => 'Очень длинный роман',
+            'published_year' => 1879,
+            'pages' => 900,
+            'cover_image' => 'https://www.moscowbooks.ru/image/book/726/orig/i726380.jpg?cu=20210811163506',
         ]);
 
         // Привязки
@@ -45,5 +54,9 @@ class BookSeeder extends Seeder
 
         $book3->authors()->attach(Author::where('name', 'Александр Пушкин')->first()->id);
         $book3->genres()->attach([Genre::where('name', 'Поэзия')->first()->id, Genre::where('name', 'Классика')->first()->id]);
+
+        $book4->authors()->attach(Author::where('name', 'Фёдор Достоевский')->first()->id);
+        $book4->genres()->attach([Genre::where('name', 'Роман')->first()->id, Genre::where('name', 'Классика')->first()->id]);
+
     }
 }

@@ -1,0 +1,75 @@
+
+.form-label{
+    font-family: "Caveat", cursive !important;
+    font-size: 2em !important;
+}
+.form-check-input {
+    border: 2px solid var(--blue-color-) !important;
+    border-radius: 4px !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--blue-color-) !important;
+    border-color: var(--blue-color-) !important;
+
+}
+
+.form-check-input:checked + .form-check-label {
+    color: var(--pink-color) !important;
+    accent-color:var(--pink-color) !important;
+
+}
+
+
+.form-control:focus,
+.form-control:active
+{
+    transition: all 2s ease !important;
+    background-color: #fffcc8 !important;
+}
+.logo-block{
+    transition: all 2s ease !important;
+    color:var(--pink-color) !important;
+}
+.logo{
+    width: 60px !important;
+    height: auto;
+    margin-top: 2em;
+}
+.logo-text{
+    font-size: 55px ;
+    font-family: Ubuntu;
+}
+.btn{
+    transition: all 2s ease !important;
+
+}
+
+.logo-block {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 910px) {
+
+    .logo {
+        width: 60px !important;
+        height: auto;
+    }
+    .logo-text {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .logo {
+        width: 50px !important;
+        height: auto;
+    }
+    .logo-text {
+        font-size: 40px;
+    }
+}
+

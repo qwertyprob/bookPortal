@@ -27,6 +27,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('bio')->nullable();
+            $table->string('portrait')->nullable();
             $table->timestamps();
         });
 
@@ -34,7 +35,6 @@ return new class extends Migration
         Schema::create('author_book', function (Blueprint $table) {
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->foreignId('author_id')->constrained('authors')->onDelete('cascade');
-            $table->timestamps();
 
             $table->primary(['book_id', 'author_id']); // составной ключ
         });
@@ -50,7 +50,6 @@ return new class extends Migration
         Schema::create('book_genre', function (Blueprint $table) {
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->foreignId('genre_id')->constrained('genres')->onDelete('cascade');
-            $table->timestamps();
 
             $table->primary(['book_id', 'genre_id']);
         });

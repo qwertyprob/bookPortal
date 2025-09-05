@@ -122,10 +122,9 @@ input.form-control:focus-within {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
     border: 2px solid var(--pink-color) !important;
-    font-family: "Caveat";
+    font-family: Arial !important;
     font-size: 1.3em;
     letter-spacing: 4px;
-    width: 22%;
     height: auto;
 }
 
@@ -210,11 +209,11 @@ input.form-control:focus-within {
         position: absolute !important;
     }
 }
-@media (max-width: 991px) {
-    input.form-control {
-        width: 60% !important;
-    }
-    .btn.btn-secondary {
-        width: 40% !important;
-    }
-}
+/*@media (max-width: 991px) {*/
+/*    input.form-control {*/
+/*        width: 60% !important;*/
+/*    }*/
+/*    .btn.btn-secondary {*/
+/*        width: 40% !important;*/
+/*    }*/
+/*}*/

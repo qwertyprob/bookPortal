@@ -4,13 +4,13 @@
 
     <div class="container my-5">
         <div class="row my-5 py-1 px-0">
-
-            <div class="col-12 my-5">
+            <h1 class="mt-4">Эта страница добавлена в шутку..</h1>
+            <div class="col-12 my-3">
                 <x-map></x-map>
             </div>
         </div>
 
-        <div class="row d-flex">
+        <div class="row d-flex align-items-center ">
             <div class="col=12 col-md-6">
                 <p>
                     Адрес:
@@ -41,10 +41,7 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
-
-
 
 
 </x-layout>
