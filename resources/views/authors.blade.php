@@ -4,7 +4,7 @@
 <div class="content-wrapper">
       <div class="row">
           <div class="col-12 ">
-            <h1 class="text-center display-1">Авторы:</h1>
+              <h1 class="text-center display-1">Авторы:</h1>
           </div>
           @foreach($authors as $author)
               <h1>Автор: {{$author->name}}</h1>

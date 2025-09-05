@@ -76,4 +76,22 @@ body {
 
 
 }
+.hover:hover{
+    transition: all 2s ease;
+    background-color : var(--blue-color-) !important;
+
+}
+.book-image{
+    width: 7em !important;
+}
+.book-block{
+    height: 19em !important;
+}
+.book-block p{
+    font-family: Arial !important;
+    font-weight: lighter;
+    font-size: 1.2em;
+
+}
+
 

@@ -46,112 +46,26 @@
             </div>
         </div>
 
-        <h1 class="text-start">Специальные предложения:</h1>
-
-        <div class="row g-3 mb-3">
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="bg-light p-3 rounded">
-                    <pre>
-    asdasdasd
-    dsasda
-    dassad
-    dassad
-    dassad
-    dassaddassad
-      </pre>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="bg-light p-3 rounded">
-                    <pre>
-    asdasdasd
-    dsasda
-    dassad
-    dassad
-    dassad
-    dassaddassad
-      </pre>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="bg-light p-3 rounded">
-                    <pre>
-    asdasdasd
-    dsasda
-    dassad
-    dassad
-    dassad
-    dassaddassad
-      </pre>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="bg-light p-3 rounded">
-                    <pre>
-    asdasdasd
-    dsasda
-    dassad
-    dassad
-    dassad
-    dassaddassad
-      </pre>
-                </div>
-            </div>
-        </div>
-
-
         <h1 class="text-start">Популярные книги:</h1>
 
-        <div class="row g-3 mb-5">
-            <div class="col-12 col-md-6 col-lg-3 ">
-                <div class="bg-light p-3 rounded hover-block">
-                    <pre>
-    asdasdasd
-    dsasda
-    dassad
-    dassad
-    dassad
-    dassaddassad
-      </pre>
+        <div class="row g-3 mb-3">
+            @for($i = 0; $i<10;$i++ )
+           @foreach($books as $book)
+            <div class="col-6 col-md-6 col-lg-2">
+                <div class="book-block bg-light p-3 rounded hover position-relative">
+                  <div class="d-flex flex-column pt-3 align-items-center">
+                      <img src="{{$book->cover_image}}" class="book-image">
+                      <p class="text-start py-4"> {{$book->title}}</p>
+                  </div>
+                    <a href="/books" class="stretched-link"></a>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="bg-light p-3 rounded">
-                    <pre>
-    asdasdasd
-    dsasda
-    dassad
-    dassad
-    dassad
-    dassaddassad
-      </pre>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="bg-light p-3 rounded">
-                    <pre>
-    asdasdasd
-    dsasda
-    dassad
-    dassad
-    dassad
-    dassaddassad
-      </pre>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="bg-light p-3 rounded">
-                    <pre>
-    asdasdasd
-    dsasda
-    dassad
-    dassad
-    dassad
-    dassaddassad
-      </pre>
-                </div>
-            </div>
+           @endforeach
+            @endfor
+
         </div>
+
+
 
         <!-- Блок с цитатой -->
         <div class="row rounded bg-white mt-5 ">

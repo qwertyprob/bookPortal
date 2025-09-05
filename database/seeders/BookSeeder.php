@@ -17,7 +17,7 @@ class BookSeeder extends Seeder
             'description' => 'Исторический роман-эпопея о войне 1812 года.',
             'published_year' => 1869,
             'pages' => 1225,
-            'cover_image' => 'https://tolstoy.ru/upload/creativity/fiction/detail/upload/iblock/72e/w-p.jpg'
+            'cover_image' => 'https://simg.marwin.kz/media/catalog/product/cache/41deb699a7fea062a8915debbbb0442c/c/o/cover1__w600_55_171.jpg'
         ]);
 
         $book2 = Book::create([
