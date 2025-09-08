@@ -21,7 +21,8 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
+    <!--Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>{{ $title }}</title>
 </head>
@@ -29,6 +30,8 @@
 <body>
 {{ $slot }}
 <script src="{{asset("js/goTomainPageScript.js")}}"></script>
+<!--Jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 

@@ -21,7 +21,7 @@
                         <label class="form-check-label" for="remember">Запомни меня</label>
                     </div>
 
-                    <button style="width: 100% !important;" type="submit" class="btn btn-secondary w-100 mb-3">Войти</button>
+                    <button style="width: 100% !important;" type="submit" class="btn btn-info w-100 mb-3">Войти</button>
 
                     <button style="width: 100% !important;" id="mainPageButton" type="submit" class="btn btn-secondary w-100">На главную</button>
 

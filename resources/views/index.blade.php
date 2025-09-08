@@ -49,7 +49,6 @@
         <h1 class="text-start">Популярные книги:</h1>
 
         <div class="row g-3 mb-3">
-            @for($i = 0; $i<10;$i++ )
            @foreach($books as $book)
             <div class="col-6 col-md-6 col-lg-2">
                 <div class="book-block bg-light p-3 rounded hover position-relative">
@@ -57,13 +56,32 @@
                       <img src="{{$book->cover_image}}" class="book-image">
                       <p class="text-start py-4"> {{$book->title}}</p>
                   </div>
-                    <a href="/books" class="stretched-link"></a>
+                    <a href="/book/{{$book->id}}" class="stretched-link"></a>
                 </div>
             </div>
            @endforeach
-            @endfor
-
         </div>
+
+        <h1 class="text-start">Популярные Авторы:</h1>
+
+        <div class="row g-3 mb-3">
+            @foreach($authors as $author)
+                <div class="col-6 col-md-6 col-lg-2">
+                    <div class="book-block bg-light p-3 rounded hover position-relative">
+                        <div class="d-flex flex-column pt-3 align-items-center justify-content-center">
+                            <img src="{{$author->portrait}}" class="book-image">
+                        </div>
+                        <div class="py-4" style="height: 15px !important;">
+                            <p class="text-start "> {{$author->name}}</p>
+                        </div>
+
+{{--                        <a href="/author/{{$author->id}}" class="stretched-link"></a>--}}
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+
 
 
 

@@ -31,7 +31,7 @@
     align-items: center;
     gap: 6px;
     padding-left: 0.5em;
-    font-family: "Caveat";
+    font-family: "Caveat" !important;
     font-size: 2em;
     text-decoration: none;
     color: gray;
@@ -115,7 +115,7 @@ input.form-control:focus-within {
     box-shadow: none !important;
     outline: none !important;
 }
-
+/* buttons */
 .btn.btn-secondary {
     color: white;
     background-color: var(--pink-color);
@@ -141,8 +141,79 @@ input.form-control:focus-within {
     background-color: var(--pink-color) !important;
 }
 
+.btn.btn-danger {
+    color: white;
+    background-color: #e74c3c; /* красный */
+
+    border: 2px solid #e74c3c !important;
+    font-family: Arial !important;
+    font-size: 1.3em;
+    height: auto;
+}
+
+.btn.btn-danger:hover {
+    color: white;
+    background-color: #c0392b; /* тёмно-красный */
+    border: 2px solid #c0392b !important;
+}
+
+.btn.btn-danger:active {
+    transform: scale(1);
+    display: inline-block;
+    color: #2c3e50 !important; /* тёмно-серый/синий оттенок для акцента */
+    border: 2px solid #e74c3c !important;
+    background-color: #e74c3c !important;
+}
+
+/* Info (Update) */
+.btn.btn-success {
+    color: white;
+    background-color: #32cf77;
+    border: 2px solid #32cf77 !important;
+    font-family: Arial !important;
+    font-size: 1.3em;
+    height: auto;
+}
+
+.btn.btn-success:hover {
+    color: white;
+    background-color: #29a460;
+    border: 2px solid #29a460 !important;
+}
+
+.btn.btn-success:active {
+    transform: scale(1);
+    display: inline-block;
+    color: #2c3e50 !important;
+    border: 2px solid #29a460 !important;
+    background-color: #29a460 !important;
+}
+
+.btn.btn-info {
+    color: white;
+    background-color: #3498db; /* голубой */
+    border: 2px solid #3498db !important;
+    font-family: Arial !important;
+    font-size: 1.3em;
+    height: auto;
+}
+
+.btn.btn-info:hover {
+    color: white;
+    background-color: #2980b9; /* тёмно-голубой */
+    border: 2px solid #2980b9 !important;
+}
+
+.btn.btn-info:active {
+    transform: scale(1);
+    display: inline-block;
+    color: #2c3e50 !important;
+    border: 2px solid #3498db !important;
+    background-color: #3498db !important;
+}
+
 .custom {
-    background-color: var(--blue-color) !important;
+    background-color: var(--blue-color-) !important;
     border-radius: 8px;
     padding: 2rem;
 }

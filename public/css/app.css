@@ -67,6 +67,14 @@ body {
 
 
 }
+@media(max-width: 766px){
+    .hover-block:hover .img-fluid.book{
+        transform: scale(1.1);
+        margin-top: 2em !important;
+
+
+    }
+}
 .hover-block:hover p{
     transform: scale(1.4);
     transition: all 2s ease;
@@ -79,19 +87,37 @@ body {
 .hover:hover{
     transition: all 2s ease;
     background-color : var(--blue-color-) !important;
-
 }
-.book-image{
-    width: 7em !important;
+
+.hover:hover img{
+    transform: scale(1.2);
+    transition: all 2s ease;
+
 }
 .book-block{
     height: 19em !important;
-}
-.book-block p{
-    font-family: Arial !important;
-    font-weight: lighter;
-    font-size: 1.2em;
 
 }
+    .book-block p{
+        font-family: Arial !important;
+        font-weight: lighter;
+        font-size: 1.2em;
+        max-height: 3em!important;
+
+    }
+.book-image{
+    width: 7em !important;
+    max-height: 160px;
+}
+
+.icon-btn {
+    d-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px !important;
+    height: 24px !important;
+    object-fit: contain; /* чтобы картинка не искажалась */
+}
+
 
 

@@ -1,4 +1,4 @@
-<footer class="footer py-4" style="background-color: var(--blue-color-);">
+<footer class="footer py-4">
     <div class="container" ">
         <div class="row d-flex justify-content-between align-items-start">
 
@@ -59,11 +59,11 @@
             </div>
         </div>
 
+
         <!-- Нижняя полоса -->
-        <hr>
-        <div class="col-12 d-flex flex-column flex-md-row justify-content-center gap-3 text-center">
-            <small>Copyright © {{ now()->format('Y') }}</small>
-            <small>Арсений — qwertyprob.</small>
+        <div class="col-12 d-flex justify-content-around gap-3 text-center">
+            <medium>Copyright © {{ now()->format('Y') }}</medium>
+            <medium>Арсений — qwertyprob.</medium>
         </div>
     </div>
 </footer>
