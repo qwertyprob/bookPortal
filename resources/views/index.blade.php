@@ -75,7 +75,7 @@
                             <p class="text-start "> {{$author->name}}</p>
                         </div>
 
-{{--                        <a href="/author/{{$author->id}}" class="stretched-link"></a>--}}
+                        <a href="/author/{{$author->id}}" class="stretched-link"></a>
                     </div>
                 </div>
             @endforeach

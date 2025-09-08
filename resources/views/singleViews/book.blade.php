@@ -4,62 +4,61 @@
 
     <div class="container">
         <div class="row my-5 bg-light rounded">
+            <div class="col-12 mt-0 pt-4 d-block d-md-none">
+                <div class="img-container d-flex justify-content-center p-5">
+                    <!-- мобилка -->
+                    <img class="img-fluid w-100 d-block d-md-none" src="{{$book->cover_image}}" alt="Book cover">
+                </div>
+            </div>
             <div class="col-12 col-md-6 d-flex flex-column rounded p-3 g-2 mb-0">
-                <div class="bg-white rounded h-100 m-4 ps-2 pe-2">
-                    <h3 class="text-start ps-2 rounded pt-2 py-0 mb-0" style="font-family: Arial !important;">
+                <div class="bg-white rounded h-100 m-4 p-3">
+
+                    <h3 class="text-start mb-3" style="font-family: Arial !important;">
                         О книге #{{$book->id}}:
                     </h3>
 
-                    <hr style="color: #f8f9fa !important;">
+                    <ul class="list-group list-group-flush">
 
-                    <h3 class="mb-0 ps-2">
-                        Название:
-                        <span style="color:indianred!important;">{{$book->title}}</span>
-                    </h3>
+                        <li class="list-group-item">
+                            <strong>Название:</strong>
+                            <span class="text" style="color: var(--pink-color)">{{$book->title}}</span>
+                        </li>
 
-                    <hr style="color: #f8f9fa !important;">
+                        <li class="list-group-item">
+                            <strong>Авторы:</strong>
+                            <span class="text" style="color: var(--pink-color)">
+                    @foreach($book->authors as $author)
+                                    <a href="/author/{{$author->id}}">{{$author->name}}</a>@if(!$loop->last), @endif
+                                @endforeach
+                </span>
+                        </li>
 
-                    <h3 class="mb-0 ps-2">
-                        Авторы:
-                        <span style="color:indianred!important;">
-                            @foreach($book->authors as $author)
-                                <a href="/author/{{$author->id}}">{{$author->name}}</a>@if(!$loop->last), @endif
-                            @endforeach
-                        </span>
-                    </h3>
+                        <li class="list-group-item">
+                            <strong>Рейтинг:</strong> 4.3
+                        </li>
 
-                    <hr style="color: #f8f9fa !important;">
+                        <li class="list-group-item">
+                            <strong>Жанры:</strong>
+                            <span class="text" style="color: var(--pink-color)">
+                    {{ $book->genres->pluck('name')->implode(', ') }}
+                </span>
+                        </li>
 
-                    <h3 class="mb-0 ps-2">Рейтинг: 4.3 </h3>
+                        <li class="list-group-item">
+                            <strong>Описание:</strong>
+                            <p class="text" style="color: var(--pink-color)" style="font-size: 1.2em; word-break: break-word;">
+                                {{$book->description}}
+                            </p>
+                        </li>
 
-                    <hr style="color: #f8f9fa !important;">
+                    </ul>
 
-
-                    <h3 class="mb-0 ps-2">
-                        Жанры:
-                        <span style="color:indianred!important;">
-                            {{ $book->genres->pluck('name')->implode(', ') }}
-                        </span>
-                    </h3>
-
-                    <hr style="color: #f8f9fa !important;">
-
-                    <div class="mb-0 d-flex ps-2" style="max-width:100%;">
-                        <h3 class="me-2 mb-0">Описание:</h3>
-                        <p class="text-danger text-start flex-grow-1 mb-0"
-                           style="font-size: 1.6em; max-width:100%; word-break: break-word; overflow-wrap: anywhere; white-space: normal;">
-                            {{$book->description}}
-                        </p>
-                    </div>
-
-                    <hr style="color: #f8f9fa !important;">
                 </div>
             </div>
 
+
             <div class="col-12 col-md-6 mt-0 pt-4">
                 <div class="img-container d-flex justify-content-center p-5 pt-4">
-                    <!-- мобилка -->
-                    <img class="img-fluid w-100 d-block d-md-none" src="{{$book->cover_image}}" alt="Book cover">
 
                     <!-- планшет -->
                     <img class="img-fluid w-100 d-none d-md-block d-lg-none" src="{{$book->cover_image}}" alt="Book cover">

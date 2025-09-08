@@ -55,7 +55,8 @@
 
                                <div class="form-group mb-2 w-100">
                                    <label class="form-label">Описание</label>
-                                   <textarea class="form-control" rows="6" name="description">{{ $item->description }} </textarea>
+                                   <textarea class="form-control" name="description"
+                                   >{{ $item->description }} </textarea>
                                </div>
 
                            </form>
@@ -88,7 +89,8 @@
 
                                <div class="form-group mb-2">
                                    <label class="form-label">Биография автора</label>
-                                   <textarea class="form-control" rows="6" name="bio">{{ $item->bio }} </textarea>
+                                   <textarea class="form-control" name="bio"
+                                   >{{ $item->bio }} </textarea>
                                </div>
 
                            </form>
@@ -96,7 +98,7 @@
                    </div>
 
                    <div class="col-12 col-md-6 py-2 d-flex flex-column align-items-center" >
-                       <img class="img-fluid rounded" style="height: auto; max-height: 600px;"
+                       <img class="img-fluid rounded w-100" style="height: auto; max-height: 700px;"
                             src="{{$item->cover_image ?? $item->portrait}}">
                        @if($item->title)
                            <h3 class="pt-3">Рейтинг: 4.3</h3>

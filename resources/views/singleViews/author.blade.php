@@ -5,49 +5,49 @@
     <div class="container">
         <div class="row my-5 bg-light rounded">
 
+            <div class="col-12 mt-0 pt-4 d-block d-md-none">
+                <div class="img-container d-flex justify-content-center p-5 pt-4">
+                    <!-- мобилка -->
+                    <img class="img-fluid w-100 d-block d-md-none" src="{{$author->portrait}}" alt="Book cover">
+                </div>
+            </div>
             <div class="col-12 col-md-6 d-flex flex-column rounded p-3 g-2 mb-0">
-                <div class="bg-white rounded h-100 m-4 ps-2 pe-2">
+                <div class="bg-white rounded h-100 m-4 p-3">
 
-                    <h3 class="text-start ps-2 rounded pt-2 py-0 mb-0" style="font-family: Arial,serif !important;">
+                    <h3 class="text-start mb-3" style="font-family: Arial !important;">
                         Об авторе #{{$author->id}}:
                     </h3>
 
-                    <hr style="color: #f8f9fa !important;">
+                    <ul class="list-group list-group-flush">
 
-                    <h3 class="mb-0 ps-2">
-                        Имя:
-                        <span style="color:indianred!important;">{{$author->name}}</span>
-                    </h3>
+                        <li class="list-group-item">
+                            <strong>Имя автора:</strong>
+                            <span class="text" style="color: var(--pink-color)">{{$author->name}}</span>
+                        </li>
 
-                    <hr style="color: #f8f9fa !important;">
+                        <li class="list-group-item">
+                            <strong>Книги:</strong>
+                            <span class="text" style="color: var(--pink-color)">
+                    @foreach($author->books as $book)
+                                    <a href="/book/{{$book->id}}">{{$book->title}}</a>@if(!$loop->last), @endif
+                                @endforeach
+                </span>
+                        </li>
 
-                    <h3 class="mb-0 ps-2">
-                        Книги:
-                        <span style="color:indianred!important;">
-                            @foreach($author->books as $book)
-                                <a href="/book/{{$book->id}}">{{$book->title}}</a>@if(!$loop->last), @endif
-                            @endforeach
-                        </span>
-                    </h3>
+                        <li class="list-group-item">
+                            <strong>Биография автора:</strong>
+                            <p class="text" style="color: var(--pink-color)" style="font-size: 1.2em; word-break: break-word;">
+                                {{$author->bio}}
+                            </p>
+                        </li>
 
-                    <hr style="color: #f8f9fa !important;">
+                    </ul>
 
-                    <div class="mb-0 d-flex ps-2" style="max-width:100%;">
-                        <h3 class="me-2 mb-0">Биография:</h3>
-                        <p class="text-danger text-start flex-grow-1 mb-0"
-                           style="font-size: 1.6em; max-width:100%; word-break: break-word; overflow-wrap: anywhere; white-space: normal;">
-                            {{$author->bio}}
-                        </p>
-                    </div>
-
-                    <hr style="color: #f8f9fa !important;">
                 </div>
             </div>
 
             <div class="col-12 col-md-6 mt-0 pt-4">
                 <div class="img-container d-flex justify-content-center p-5 pt-4">
-                    <!-- мобилка -->
-                    <img class="img-fluid w-100 d-block d-md-none" src="{{$author->portrait}}" alt="Book cover">
 
                     <!-- планшет -->
                     <img class="img-fluid w-100 d-none d-md-block d-lg-none" src="{{$author->portrait}}" alt="Book cover">
@@ -64,12 +64,12 @@
             <div class="row mt-5 bg-light rounded p-4">
                 <div class="col-12">
                     <div class="button-group d-flex justify-content-end align-items-center">
-                        <button class="btn btn-info m-2 p-1 pb-1" data-bs-toggle="modal" data-bs-target="#editAuthor{{ $book->id }}">
+                        <button class="btn btn-info m-2 p-1 pb-1" data-bs-toggle="modal" data-bs-target="#editAuthor{{ $author->id }}">
                             <img class="icon-btn" src="{{asset("img/icons/edit.png")}}" alt="Edit">
                         </button>
 
                         <x-popup-edit
-                            id="editAuthor{{ $book->id }}"
+                            id="editAuthor{{ $author->id }}"
                             title="Редактирование автора"
                             :item="$author"
 
