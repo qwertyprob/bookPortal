@@ -9,7 +9,7 @@ class AuthorController extends Controller
 {
 
     public function getAllAuthors(){
-        $authors = Author::all();
+        $authors = Author::paginate(12);
 
         return view('authors',['authors'=>$authors ,'status'=>'success']);
     }

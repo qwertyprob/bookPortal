@@ -24,8 +24,8 @@ class GenreSeeder extends Seeder
             'Приключения',
             'Любовный роман',
             'Трагедия',
-            'Комедия'
-        ];
+            'Комедия',
+            ];
 
         foreach ($genres as $genre) {
             Genre::create(['name' => $genre]);

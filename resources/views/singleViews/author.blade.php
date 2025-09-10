@@ -11,8 +11,8 @@
                     <img class="img-fluid w-100 d-block d-md-none" src="{{$author->portrait}}" alt="Book cover">
                 </div>
             </div>
-            <div class="col-12 col-md-6 d-flex flex-column rounded p-3 g-2 mb-0">
-                <div class="bg-white rounded h-100 m-4 p-3">
+            <div class="col-12 col-md-6 d-flex flex-column rounded p-2 p-md-3 m-0 g-2 mb-0">
+                <div class="bg-white rounded h-100 m-0 m-md-4 p-2 p-md-3">
 
                     <h3 class="text-start mb-3" style="font-family: Arial !important;">
                         Об авторе #{{$author->id}}:
@@ -36,7 +36,7 @@
 
                         <li class="list-group-item">
                             <strong>Биография автора:</strong>
-                            <p class="text" style="color: var(--pink-color)" style="font-size: 1.2em; word-break: break-word;">
+                            <p class="text pe-5" style="color: var(--pink-color)" style="font-size: 1.2em; word-break: break-word;">
                                 {{$author->bio}}
                             </p>
                         </li>

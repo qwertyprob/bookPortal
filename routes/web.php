@@ -33,7 +33,8 @@ Route::get('/login', function () {
 //book
 Route::controller(BookController::class)->prefix('book')->group(function () {
 
-    Route::get('{id}', [BookController::class, 'getBook']);
+    Route::get('{id}', 'getBook');
+
 });
 
 //author

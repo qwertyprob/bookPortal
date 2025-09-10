@@ -8,11 +8,11 @@
         <i class="fas fa-home"></i>
         <span class="nav-text">Главная</span>
       </a>
-      <a href="/books" class="nav-item {{ Request::is('books*') ? 'active' : '' }}">
+      <a href="/books" class="nav-item {{ Request::is('book*') || Request::is('books*') ? 'active' : '' }}">
         <i class="fas fa-book"></i>
         <span class="nav-text">Книги</span>
       </a>
-      <a href="/authors" class="nav-item {{ Request::is(patterns: 'authors*') ? 'active' : '' }}">
+      <a href="/authors" class="nav-item {{ Request::is('author*' ) || Request::is('authors*') ? 'active' : '' }}">
         <i class="fas fa-feather-alt"></i>
         <span class="nav-text">Авторы</span>
       </a>

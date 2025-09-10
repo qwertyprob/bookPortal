@@ -1,8 +1,8 @@
 @import url("fonts.css");
 
 :root {
-    --blue-color-: rgb(163, 202, 236);
-    --orange-color: rgb(199, 93, 18);
+    --blue-color-: rgb(154, 203, 239);
+    --orange-color: rgb(209, 104, 30);
     --pink-color: #667799;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .container-fluid {
-    background-color: none !important;
+    background-color: white !important;
 }
 html,
 body {
@@ -111,12 +111,17 @@ body {
 }
 
 .icon-btn {
-    d-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 50px !important;
     height: 24px !important;
     object-fit: contain; /* чтобы картинка не искажалась */
+}
+
+.text-muted{
+    display: none !important;
+
 }
 
 

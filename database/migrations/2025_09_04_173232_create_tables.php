@@ -42,11 +42,11 @@ return new class extends Migration
         //Genre
         Schema::create('genres', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->timestamps();
         });
 
-        //Book Genre ногие ко многим
+        //Book Genre многие ко многим
         Schema::create('book_genre', function (Blueprint $table) {
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->foreignId('genre_id')->constrained('genres')->onDelete('cascade');
@@ -67,7 +67,7 @@ return new class extends Migration
         Schema::dropIfExists('book_genre');
         Schema::dropIfExists('genres');
 
-        Schema::dropIfExists('book_author');
+        Schema::dropIfExists('author_book');
         Schema::dropIfExists('authors');
 
         Schema::dropIfExists('books');

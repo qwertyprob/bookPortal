@@ -10,8 +10,8 @@
                     <img class="img-fluid w-100 d-block d-md-none" src="{{$book->cover_image}}" alt="Book cover">
                 </div>
             </div>
-            <div class="col-12 col-md-6 d-flex flex-column rounded p-3 g-2 mb-0">
-                <div class="bg-white rounded h-100 m-4 p-3">
+            <div class="col-12 col-md-6 d-flex flex-column rounded p-2 p-md-3 m-0 g-2 mb-0">
+                <div class="bg-white rounded h-100 m-0 m-md-4 p-2 p-md-3">
 
                     <h3 class="text-start mb-3" style="font-family: Arial !important;">
                         О книге #{{$book->id}}:
@@ -27,9 +27,9 @@
                         <li class="list-group-item">
                             <strong>Авторы:</strong>
                             <span class="text" style="color: var(--pink-color)">
-                    @foreach($book->authors as $author)
+                            @foreach($book->authors as $author)
                                     <a href="/author/{{$author->id}}">{{$author->name}}</a>@if(!$loop->last), @endif
-                                @endforeach
+                            @endforeach
                 </span>
                         </li>
 
@@ -40,13 +40,13 @@
                         <li class="list-group-item">
                             <strong>Жанры:</strong>
                             <span class="text" style="color: var(--pink-color)">
-                    {{ $book->genres->pluck('name')->implode(', ') }}
-                </span>
+                            {{ $book->genres->pluck('name')->implode(', ') }}
+                            </span>
                         </li>
 
                         <li class="list-group-item">
                             <strong>Описание:</strong>
-                            <p class="text" style="color: var(--pink-color)" style="font-size: 1.2em; word-break: break-word;">
+                            <p class="text px-2" style="color: var(--pink-color)" style="font-size: 1.2em; word-break: break-word;">
                                 {{$book->description}}
                             </p>
                         </li>
@@ -74,7 +74,7 @@
             <div class="col-12 p-3 g-2 mb-2">
                 <h1>Комментарии:</h1>
                 <div>
-                    <div class="d-flex flex-column mx-3 mt-2 p-2 bg-white rounded">
+                    <div class="d-flex flex-column mx-0 mx-md-3 mt-2 m-0 m-md-4 p-2 p-md-3 bg-white rounded">
                         <h4 class="m-0 mt-2" style="color: var(--orange-color) !important;">
                             Арсений Игоревич (qwertyprob)
                         </h4>
@@ -142,6 +142,7 @@
                         <!-- Delete -->
 
                         <button class="btn btn-danger m-2 p-1" data-bs-toggle="modal" data-bs-target="#deleteBook{{ $book->id }}">
+
                             <img class="icon-btn" src="{{ asset('img/icons/delete.png') }}" alt="Delete">
                         </button>
 
@@ -155,4 +156,6 @@
             </div>
         @endif
     </div>
+
 </x-layout>
+

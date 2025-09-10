@@ -29,7 +29,8 @@ class BookController extends Controller
     }
     function getAllBooks()
     {
-        $books = Book::all();
+        $books = Book::orderBy('title')->paginate(12);
+
 
         return view('books', ['books' => $books]);
     }
@@ -49,6 +50,14 @@ class BookController extends Controller
         $book = Book::all()->where('id', $id)->first();
 
         return view('singleViews.book', ['book' => $book]);
+
+    }
+
+
+    function pagination($pageNumber){
+
+
+
 
     }
 

@@ -2,7 +2,7 @@
     'id',
     'title' => 'Подтверждение',
     'item' => null,
-        'route' => '#',
+    'route' => '#',
 ])
 
 <!-- Modal -->
@@ -98,14 +98,13 @@
                    </div>
 
                    <div class="col-12 col-md-6 py-2 d-flex flex-column align-items-center" >
-                       <img class="img-fluid rounded w-100" style="height: auto; max-height: 700px;"
+                       <img class="img-fluid rounded w-75" style="height: auto; max-height: 700px;"
                             src="{{$item->cover_image ?? $item->portrait}}">
                        @if($item->title)
                            <h3 class="pt-3">Рейтинг: 4.3</h3>
                        @endif
                    </div>
                </div>
-
 
 
             </div>
@@ -117,7 +116,7 @@
 
 
                 <button type="submit" class="btn btn-success">
-                    <img class="icon-btn" src="{{ asset('img/icons/delete.png') }}" alt="Edit">
+                    <img class="icon-btn" src="{{ asset('img/icons/save.png') }}" alt="save">
                 </button>
 
             </div>
