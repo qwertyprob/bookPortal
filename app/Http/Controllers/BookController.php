@@ -2,34 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Interfaces\BookRepositoryInterface;
 use App\Models\Author;
 use App\Models\Book;
 use App\Models\Genre;
 use Illuminate\Routing\Controller;
-use mysql_xdevapi\Exception;
+use Exception;
+use Illuminate\Support\Collection;
 
 class BookController extends Controller
 {
-    function index()
-    {
-        $books = null;
-        $authors = null;
-       try
-       {
-           $books = $this->getSixBooks();
-           $authors = Author::with('books')->get()
-               ->sortByDesc(fn($author) => $author->books->count())->take(6);
-
-       }
-       catch (Exception $e)
-       {
-           return view('index', ['books' => $books, 'error' => $e->getMessage()]);
-       }
-        return view('index', ['books' => $books,'authors' => $authors]);
+    private readonly BookRepositoryInterface $bookRepository;
+    public function __construct(BookRepositoryInterface $bookRepository){
+        $this->bookRepository = $bookRepository;
     }
+
+
+    public function index()
+    {
+        try {
+            $books = $this->getSixBooks();
+
+            $authors = Author::with('books')->get()
+                ->sortByDesc(fn($author) => $author->books->count())
+                ->take(6);
+
+        } catch (\Exception $e) {
+            $books = collect();
+            $authors = collect();
+
+            return view('index', [
+                'books' => $books,
+                'authors' => $authors,
+                'error' => $e->getMessage()
+            ]);
+        }
+
+        return view('index', [
+            'books' => $books,
+            'authors' => $authors
+        ]);
+    }
+
     function getAllBooks()
     {
-        $books = Book::orderBy('title')->paginate(12);
+        $books = $this->bookRepository->getPaginatedBooks(12);
 
 
         return view('books', ['books' => $books]);
@@ -37,7 +54,7 @@ class BookController extends Controller
 
     function  getSixBooks()
     {
-        $books = Book::all()->take(6);
+        $books = Book::query()->limit(6)->get();
 
         if($books->isEmpty())
             throw new Exception("No books found");
@@ -52,15 +69,5 @@ class BookController extends Controller
         return view('singleViews.book', ['book' => $book]);
 
     }
-
-
-    function pagination($pageNumber){
-
-
-
-
-    }
-
-
 
 }

@@ -1,0 +1,161 @@
+/* ===== improved buttons.css — paste this AFTER your current buttons rules ===== */
+
+/* 1) Базовые улучшения */
+.btn {
+    /* отключаем странный долгий transition и даём точечные, быстрые переходы */
+    transition: transform .15s ease, box-shadow .15s ease, background-color .20s ease, border-color .20s ease, color .20s ease !important;
+    will-change: transform, box-shadow;
+    -webkit-tap-highlight-color: transparent !important; /* убирает серый тап-хайлайт на iOS/Android */
+    touch-action: manipulation !important;
+    -webkit-touch-callout: none !important;
+}
+
+/* курсор только если не disabled */
+.btn:not(:disabled):not(.disabled) { cursor: pointer; }
+
+/* 2) Универсальный эффект "нажатия" — заменяет разные :active с конфликтной логикой */
+.btn:not(:disabled):not(.disabled):active,
+.btn:not(:disabled):not(.disabled).active {
+    transform: translateY(1px) scale(0.97) !important; /* лёгкое сжатие */
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.12) !important; /* эффект "вдавливания" */
+}
+
+/* 3) Touch devices — чуть сильнее ощущение "нажатия" */
+@media (pointer: coarse) {
+    .btn:not(:disabled):not(.disabled):active,
+    .btn:not(:disabled):not(.disabled).active {
+        transform: translateY(0.8px) scale(0.95) !important;
+        box-shadow: inset 0 3px 10px rgba(0,0,0,0.18) !important;
+    }
+}
+
+/* 4) Доступный фокус для клавиатуры */
+.btn:focus-visible {
+    outline: none !important;
+    /* кольцо фокуса — можно заменить rgba(...) на цвет из переменных, если есть RGB-переменная */
+    box-shadow: 0 0 0 3px rgba(38,143,255,0.18), 0 6px 18px rgba(0,0,0,0.06) !important;
+}
+
+/* 5) Уточнения для disabled */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* 6) Перекрываем старые :active правила для конкретных типов (чтобы не было конфликтов transform) */
+/* мы оставляем цвета как есть (не меняем концепцию), просто убираем противоречивое transform: scale(1) */
+.btn.btn-secondary:active,
+.btn.btn-danger:active,
+.btn.btn-success:active,
+.btn.btn-info:active,
+.btn.btn-secondary.active,
+.btn.btn-danger.active,
+.btn.btn-success.active,
+.btn.btn-info.active {
+    /* не трогаем background-color/border — они остаются по твоей логике hover/normal */
+    transform: translateY(1px) scale(0.97) !important;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.12) !important;
+    /* если в старых правилах стояли изменения цвета — они будут переопределены текущими hover/active цветами,
+       но здесь мы специально не принуждаем смену цвета, чтобы не ломать концепцию */
+}
+
+/* 7) Небольшая доработка hover (быстрее и предсказуемее) */
+.btn:hover:not(:disabled):not(.disabled) {
+    transition-duration: .18s !important; /* быстрее hover */
+    /* цвета остаются с твоими .btn-*>:hover правилами */
+}
+
+/* 8) Доп. защита от "залипания" :hover на мобильных браузерах */
+@media (max-width: 768px) {
+    .btn:hover { /* на мобильных hover не нужен — минимизируем визуальные артефакты */
+        transition-duration: .08s !important;
+    }
+}
+
+
+/* buttons.css */
+.btn.btn-secondary {
+    color: white;
+    background-color: var(--pink-color);
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border: 2px solid var(--pink-color) !important;
+    font-family: Arial !important;
+    font-size: 1.3em;
+    letter-spacing: 4px;
+    height: auto;
+}
+.btn.btn-secondary:hover {
+    color: white;
+    background-color: var(--orange-color);
+    border: 2px solid var(--orange-color) !important;
+}
+.btn.btn-secondary:active {
+    transform: scale(1);
+    color: var(--blue-color-) !important;
+    border: 2px solid var(--pink-color) !important;
+    background-color: var(--pink-color) !important;
+}
+
+/* Danger */
+.btn.btn-danger {
+    color: white;
+    background-color: var(--orange-color);
+    border: 2px solid var(--orange-color) !important;
+    font-family: Arial !important;
+    font-size: 1.3em;
+    height: auto;
+}
+.btn.btn-danger:hover {
+    color: white;
+    background-color: #8b0619;
+    border: 2px solid #8b0619 !important;
+}
+.btn.btn-danger:active {
+    color: #D1681EFF !important;
+    border: 2px solid #D1681EFF !important;
+    background-color: #D1681EFF !important;
+}
+
+/* Success */
+.btn.btn-success {
+    color: white;
+    background-color: #32cf77;
+    border: 2px solid #32cf77 !important;
+    font-family: Arial !important;
+    font-size: 1.3em;
+    height: auto;
+}
+.btn.btn-success:hover {
+    color: white;
+    background-color: #93eab7;
+    border: 2px solid #93eab7 !important;
+}
+.btn.btn-success:active {
+    color: #2c3e50 !important;
+    border: 2px solid #32cf77 !important;
+    background-color: #32cf77 !important;
+}
+
+/* Info */
+.btn.btn-info {
+    color: white !important;
+    background-color: var(--blue-color-);
+    border: 2px solid var(--blue-color-) !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 1.3em;
+    height: auto;
+}
+.btn.btn-info:hover {
+    color: white;
+    background-color: var(--pink-color);
+    border: 2px solid var(--pink-color) !important;
+}
+.btn.btn-info:active {
+    color: white;
+    border: 2px solid #a8cdef !important;
+    background-color: #a8cdef !important;
+}

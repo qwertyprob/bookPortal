@@ -48,38 +48,46 @@
 
         <h1 class="text-start">Популярные книги:</h1>
 
-        <div class="row g-3 mb-3">
-           @foreach($books as $book)
-            <div class="col-6 col-md-6 col-lg-2">
-                <div class="book-block bg-light p-3 rounded hover position-relative">
-                  <div class="d-flex flex-column pt-3 align-items-center">
-                      <img src="{{$book->cover_image}}" class="book-image">
-                      <p class="text-start py-4"> {{$book->title}}</p>
-                  </div>
-                    <a href="/book/{{$book->id}}" class="stretched-link"></a>
-                </div>
+        @if($books->isEmpty())
+            <h1>Нет книг</h1>
+        @else
+            <div class="row g-3 mb-3">
+                @foreach($books as $book)
+                    <div class="col-6 col-md-6 col-lg-2">
+                        <div class="book-block bg-light p-3 rounded hover position-relative">
+                            <div class="d-flex flex-column pt-3 align-items-center">
+                                <img src="{{$book->cover_image}}" class="book-image">
+                                <p class="text-start py-4"> {{$book->title}}</p>
+                            </div>
+                            <a href="/book/{{$book->id}}" class="stretched-link"></a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-           @endforeach
-        </div>
+        @endif
 
         <h1 class="text-start">Популярные Авторы:</h1>
+        @if($authors == null || $authors->isEmpty())
+            <h1>{{$error}}</h1>
+        @else
+            <div class="row g-3 mb-3">
+                @foreach($authors as $author)
+                    <div class="col-6 col-md-6 col-lg-2">
+                        <div class="book-block bg-light p-3 rounded hover position-relative">
+                            <div class="d-flex flex-column pt-3 align-items-center justify-content-center">
+                                <img src="{{$author->portrait}}" class="book-image">
+                            </div>
+                            <div class="py-4" style="height: 15px !important;">
+                                <p class="text-start "> {{$author->name}}</p>
+                            </div>
 
-        <div class="row g-3 mb-3">
-            @foreach($authors as $author)
-                <div class="col-6 col-md-6 col-lg-2">
-                    <div class="book-block bg-light p-3 rounded hover position-relative">
-                        <div class="d-flex flex-column pt-3 align-items-center justify-content-center">
-                            <img src="{{$author->portrait}}" class="book-image">
+                            <a href="/author/{{$author->id}}" class="stretched-link"></a>
                         </div>
-                        <div class="py-4" style="height: 15px !important;">
-                            <p class="text-start "> {{$author->name}}</p>
-                        </div>
-
-                        <a href="/author/{{$author->id}}" class="stretched-link"></a>
                     </div>
-                </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
+        @endif
+
 
 
 

@@ -1,0 +1,8 @@
+@media(max-width: 766px){
+    .hover-block:hover .img-fluid.book{
+        transform: scale(1.1);
+        margin-top: 2em !important;
+
+
+    }
+}

@@ -1,0 +1,79 @@
+.hover-block {
+    transition: background-color 0.8s ease, color 0.5s ease;
+}
+
+.search {
+    transition: background-color 0.8s ease, color 0.5s ease;
+}
+
+.hover-block:hover,
+.hover-block:active{
+    background-color: #a3caec !important;
+    cursor: pointer !important;
+    color : #667799 !important;
+}
+.color-text{
+    color : #f6f7f8 !important;
+}
+.color-text:hover{
+    color : #667799 !important;
+}
+
+.hover-block:hover .hide-text{
+    color: #a3caec !important;
+}
+.hover-block:hover .img-fluid.book{
+    transform: scale(1.22);
+    padding-bottom: 0.4em !important;
+    transition: all 3s ease;
+
+
+}
+.hover-block:hover p{
+    transform: scale(1.4);
+    transition: all 2s ease;
+    align-content: center !important;
+    padding-left: 2em !important;
+    color : #667799 !important;
+
+
+}
+.hover:hover{
+    transition: all 2s ease;
+    background-color : var(--blue-color-) !important;
+}
+
+.hover:hover img{
+    transform: scale(1.2);
+    transition: all 2s ease;
+
+}
+.book-block{
+    height: 19em !important;
+
+}
+.book-block p{
+    font-family: Arial !important;
+    font-weight: lighter;
+    font-size: 1.2em;
+    max-height: 3em!important;
+
+}
+.book-image{
+    width: 7em !important;
+    max-height: 160px;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px !important;
+    height: 24px !important;
+    object-fit: contain; /* чтобы картинка не искажалась */
+}
+
+.text-muted{
+    display: none !important;
+
+}

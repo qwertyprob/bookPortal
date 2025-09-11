@@ -83,9 +83,11 @@
 
 
 
-        <a class="btn btn-info m-2 p-1 pb-1 px-2" href="{{$paginator->nextPageUrl()}}">
-            >
-        </a>
+       @if($paginator->currentPage() != $paginator->lastPage())
+            <a class="btn btn-info m-2 p-1 pb-1 px-2" href="{{$paginator->nextPageUrl()}}">
+                >
+            </a>
+        @endif
 
 </div>
 

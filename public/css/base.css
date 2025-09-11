@@ -1,0 +1,21 @@
+:root {
+    --blue-color-: rgb(154, 203, 239);
+    --orange-color: rgb(209, 104, 30);
+    --pink-color: #667799;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    background-color: white !important;
+}
