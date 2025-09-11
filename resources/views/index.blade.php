@@ -34,11 +34,16 @@
             <div class="col-12 col-md-6">
                 <div class="bg-light rounded hover-block w-100 h-100 d-flex flex-column justify-content-between position-relative p-3 pb-0 mb-0">
                     <h1 class="text-center my-3 hide-text">О нас</h1>
+{{--                    <div class="d-flex justify-content-center align-items-center">--}}
+{{--                        <img class="img-fluid d-flex"--}}
+{{--                             style="width: 5em;color:var(--blue-color-)!important;--}}
+{{--                              color:var(--blue-color-)!important;"--}}
+{{--                             src="{{ asset('img/icons/add.png') }}" alt="book">--}}
+{{--                    </div>--}}
                     <div class="d-flex align-items-center flex-column flex-md-row gap-3 pb-0 mb-0">
                         <img class="img-fluid" style="width: 7em;" src="{{ asset('img/mem.png') }}" alt="book">
                         <p class="w-50 m-0 d-none d-md-block ps-md-0 ps-5 color-text" style="font-family: Arial;">
-                            Хотите узнать о нас?
-                            Переходите в раздел!
+                            Вы можете добавить книгу!
                         </p>
                     </div>
                     <a href="/about" class="stretched-link"></a>

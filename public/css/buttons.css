@@ -159,3 +159,11 @@
     border: 2px solid #a8cdef !important;
     background-color: #a8cdef !important;
 }
+
+
+/*pagination*/
+.active-btn {
+    background-color: var(--pink-color) !important;
+    border-color: var(--pink-color) !important;
+}
+

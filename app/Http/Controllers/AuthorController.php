@@ -9,7 +9,7 @@ class AuthorController extends Controller
 {
 
     public function getAllAuthors(){
-        $authors = Author::paginate(12);
+        $authors = Author::paginate(2);
         if($authors->isEmpty()|| $authors == null){
             $authors = collect();
         }

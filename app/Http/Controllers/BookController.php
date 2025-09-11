@@ -46,7 +46,7 @@ class BookController extends Controller
 
     function getAllBooks()
     {
-        $books = $this->bookRepository->getPaginatedBooks(12);
+        $books = $this->bookRepository->getPaginatedBooks(2);
 
 
         return view('books', ['books' => $books]);
