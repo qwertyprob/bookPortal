@@ -53,7 +53,7 @@
 
         <h1 class="text-start">Популярные книги:</h1>
 
-        @if($books->isEmpty())
+        @if(isset($books) || $books === null || $books->count() == 0)
             <h1>Нет книг</h1>
         @else
             <div class="row g-3 mb-3">
@@ -72,7 +72,7 @@
         @endif
 
         <h1 class="text-start">Популярные Авторы:</h1>
-        @if($authors == null || $authors->isEmpty())
+        @if($authors == null)
             <h1>{{$error}}</h1>
         @else
             <div class="row g-3 mb-3">
@@ -80,7 +80,7 @@
                     <div class="col-6 col-md-6 col-lg-2">
                         <div class="book-block bg-light p-3 rounded hover position-relative">
                             <div class="d-flex flex-column pt-3 align-items-center justify-content-center">
-                                <img src="{{$author->portrait}}" class="book-image">
+                                <img src="{{$author->portrait}}" class="book-image rounded">
                             </div>
                             <div class="py-4" style="height: 15px !important;">
                                 <p class="text-start "> {{$author->name}}</p>

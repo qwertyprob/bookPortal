@@ -32,7 +32,7 @@
 
         @for ($i = $start; $i <= $end; $i++)
             <a href="/{{$url}}?page={{$i}}"
-               class="btn btn-info m-2 p-1 pb-1 px-2 {{ $i == $paginator->currentPage() ? 'active-btn' : '' }}">
+               class="btn btn-info m-2 p-1 pb-1 px-2 fs-5 {{ $i == $paginator->currentPage() ? 'active-btn' : '' }}">
                 {{$i}}
             </a>
 
