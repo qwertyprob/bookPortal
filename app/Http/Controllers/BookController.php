@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Interfaces\BookRepositoryInterface;
+use App\Interfaces\BookServiceInterface;
 use App\Models\Author;
 use App\Models\Book;
 use App\Models\Genre;
+use App\Services\BookService;
 use Illuminate\Routing\Controller;
 use Exception;
 use Illuminate\Support\Collection;
 
 class BookController extends Controller
 {
-    private readonly BookRepositoryInterface $bookRepository;
-    public function __construct(BookRepositoryInterface $bookRepository){
-        $this->bookRepository = $bookRepository;
+    private readonly BookServiceInterface $bookService;
+    public function __construct(BookServiceInterface $bookService){
+        $this->bookService = $bookService;
     }
 
 
@@ -46,7 +47,7 @@ class BookController extends Controller
 
     function getAllBooks()
     {
-        $books = $this->bookRepository->getPaginatedBooks(2);
+        $books = $this->bookService->getPaginatedBooks(2);
 
 
         return view('books', ['books' => $books]);
