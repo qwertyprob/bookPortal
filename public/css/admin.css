@@ -108,3 +108,44 @@ font-size: 20px;
 
 }
 
+/* Bootstrap modal fix для iOS */
+.modal {
+    z-index: 1050 !important; /* поверх sidebar */
+}
+
+.modal-backdrop {
+    z-index: 1040 !important;
+}
+
+/* iOS Safari fix */
+/*@supports (-webkit-overflow-scrolling: touch) {*/
+/*    body.modal-open {*/
+/*        position: absolute !important;*/
+/*        overflow: hidden !important;*/
+/*        width: 100% !important;*/
+/*    }*/
+/*    .modal-backdrop {*/
+/*        display: none !important;*/
+/*    }*/
+/*    body.modal-open {*/
+/*        overflow-x: auto !important;*/
+/*        overflow-y: hidden !important; !* блокируем только вертикаль *!*/
+/*        position: static !important;   !* убираем фиксированное позиционирование *!*/
+/*    }*/
+/*    .sidebar{*/
+/*        z-index: 12 !important;*/
+/*    }*/
+/*    .modal {*/
+/*        z-index: 9999 !important; !* поверх всего *!*/
+/*    }*/
+
+/*    .modal-backdrop {*/
+/*        z-index: 9998 !important; !* затемнение ниже модалки *!*/
+/*    }*/
+
+/*}*/
+
+
+
+
+

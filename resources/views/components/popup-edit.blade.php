@@ -20,7 +20,7 @@
                <div class="row d-flex justify-content-center">
                    <div class="col-12 col-md-6 p-1">
                        @if($item instanceof App\Models\Book)
-                           <form>
+
                                <div class="form-group mb-2">
                                    <label class="form-label">Название</label>
                                    <input class="form-control" name="title" value="{{ $item->title }}">
@@ -57,9 +57,9 @@
                                    >{{ $item->description }} </textarea>
                                </div>
 
-                           </form>
+
                        @else
-                           <form>
+
                                <div class="form-group mb-2">
                                    <label class="form-label">Имя автора</label>
                                    <input class="form-control" name="name" value="{{ $item->name }}">
@@ -88,7 +88,7 @@
                                    >{{ $item->bio }} </textarea>
                                </div>
 
-                           </form>
+
                        @endif
                    </div>
 
