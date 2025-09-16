@@ -72,37 +72,37 @@
         <x-comments></x-comments>
 
         <!-- If admin it appears -->
-        @if($book)
-            <div class="row mt-5 bg-light rounded p-4">
-                <div class="col-12">
-                    <div class="button-group d-flex justify-content-end align-items-center">
-                        <!-- Edit -->
+{{--        @if($book)--}}
+{{--            <div class="row mt-5 bg-light rounded p-4">--}}
+{{--                <div class="col-12">--}}
+{{--                    <div class="button-group d-flex justify-content-end align-items-center">--}}
+{{--                        <!-- Edit -->--}}
 
-                        <button class="btn btn-info m-2 p-1 pb-1" data-bs-toggle="modal" data-bs-target="#editBook{{ $book->id }}">
-                            <img class="icon-btn" src="{{asset("img/icons/edit.png")}}" alt="Edit">
-                        </button>
+{{--                        <button class="btn btn-info m-2 p-1 pb-1" data-bs-toggle="modal" data-bs-target="#editBook{{ $book->id }}">--}}
+{{--                            <img class="icon-btn" src="{{asset("img/icons/edit.png")}}" alt="Edit">--}}
+{{--                        </button>--}}
 
-                            <x-popup-edit
-                                id="editBook{{ $book->id }}"
-                                title="Редактирование книги"
-                                :item="$book"
-                            />
-                        <!-- Delete -->
+{{--                            <x-popup-edit--}}
+{{--                                id="editBook{{ $book->id }}"--}}
+{{--                                title="Редактирование книги"--}}
+{{--                                :item="$book"--}}
+{{--                            />--}}
+{{--                        <!-- Delete -->--}}
 
-                        <button class="btn btn-danger m-2 p-1" data-bs-toggle="modal" data-bs-target="#deleteBook{{ $book->id }}">
+{{--                        <button class="btn btn-danger m-2 p-1" data-bs-toggle="modal" data-bs-target="#deleteBook{{ $book->id }}">--}}
 
-                            <img class="icon-btn" src="{{ asset('img/icons/delete.png') }}" alt="Delete">
-                        </button>
+{{--                            <img class="icon-btn" src="{{ asset('img/icons/delete.png') }}" alt="Delete">--}}
+{{--                        </button>--}}
 
-                            <x-popup-delete
-                                id="deleteBook{{ $book->id }}"
-                                title="Удаление книги"
-                                body="книгу {{ $book->title }}?"
-                            />
-                    </div>
-                </div>
-            </div>
-        @endif
+{{--                            <x-popup-delete--}}
+{{--                                id="deleteBook{{ $book->id }}"--}}
+{{--                                title="Удаление книги"--}}
+{{--                                body="книгу {{ $book->title }}?"--}}
+{{--                            />--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        @endif--}}
     </div>
 
 </x-layout>

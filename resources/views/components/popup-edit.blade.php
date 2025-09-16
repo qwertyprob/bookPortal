@@ -29,24 +29,22 @@
                                    <label class="form-label">Авторы</label>
                                    <input class="form-control" name="authors" value="{{$item->authors()->pluck('name')->implode(',') }}">
                                </div>
-                               <div class="form-group mb-3">
+                               <div class="form-group mb-3 ">
                                    <label class="form-label">Жанры:</label>
-                                   <ul class="list-group">
+                                   <div class="d-flex mb-2">
+                                       <input type="text" class="form-control me-2" id="genreInput" placeholder="Добавить жанр">
+                                       <button type="button" class="btn btn-success" onclick="addGenre()">+</button>
+                                   </div>
+                                   <ul class="list-group" id="genreList">
                                        @foreach($item->genres as $genre)
                                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                                <span>{{ $genre->name }}</span>
-                                               <a class="btn btn-sm btn-danger">
-                                                   -
-                                               </a>
+                                               <button type="button" class="btn btn-sm btn-danger">-</button>
                                            </li>
                                        @endforeach
-                                       <li class="list-group-item d-flex py-2-0 pe-3">
-                                           <button class="btn btn-success w-100">
-                                               +
-                                           </button>
-                                       </li>
                                    </ul>
                                </div>
+
 
                                <div class="form-group mb-2">
                                    <label class="form-label">Ссылка на картинку</label>
@@ -67,22 +65,19 @@
                                    <input class="form-control" name="name" value="{{ $item->name }}">
                                </div>
 
-                               <div class="form-group mb-3">
+                               <div class="form-group mb-3 ">
                                    <label class="form-label">Книги:</label>
-                                   <ul class="list-group">
+                                   <div class="d-flex mb-2">
+                                       <input type="text" class="form-control me-2" id="bookInput" placeholder="Добавить книгу">
+                                       <button type="button" class="btn btn-success" onclick="addBook()"> + </button>
+                                   </div>
+                                   <ul class="list-group" id="bookList">
                                        @foreach($item->books as $book)
                                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                                <span>{{ $book->title }}</span>
-                                               <button class="btn btn-sm btn-danger">
-                                                   -
-                                               </button>
+                                               <button type="button" class="btn btn-sm btn-danger">-</button>
                                            </li>
                                        @endforeach
-                                       <li class="list-group-item d-flex py-2-0 pe-3">
-                                           <button class="btn btn-success w-100">
-                                                +
-                                           </button>
-                                       </li>
                                    </ul>
                                </div>
 
@@ -124,3 +119,4 @@
         </div>
     </div>
 </div>
+

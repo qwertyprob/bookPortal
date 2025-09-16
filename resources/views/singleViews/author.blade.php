@@ -4,7 +4,6 @@
 
     <div class="container">
         <div class="row my-5 bg-light rounded">
-
             <div class="col-12 mt-0 pt-4 d-block d-md-none">
                 <div class="img-container d-flex justify-content-center p-5 pt-4">
                     <!-- мобилка -->
@@ -60,37 +59,7 @@
 
         </div>
 
-        <!-- If admin it appears -->
-{{--        @if($author)--}}
-{{--            <div class="row mt-5 bg-light rounded p-4">--}}
-{{--                <div class="col-12">--}}
-{{--                    <div class="button-group d-flex justify-content-end align-items-center">--}}
-{{--                        <button class="btn btn-info m-2 p-1 pb-1" data-bs-toggle="modal" data-bs-target="#editAuthor{{ $author->id }}">--}}
-{{--                            <img class="icon-btn" src="{{asset("img/icons/edit.png")}}" alt="Edit">--}}
-{{--                        </button>--}}
 
-{{--                        <x-popup-edit--}}
-{{--                            id="editAuthor{{ $author->id }}"--}}
-{{--                            title="Редактирование автора"--}}
-{{--                            :item="$author"--}}
-
-{{--                        />--}}
-
-{{--                        <button class="btn btn-danger m-2 p-1" data-bs-toggle="modal" data-bs-target="#deleteAuthor{{ $author->id }}">--}}
-{{--                            <img class="icon-btn" src="{{ asset('img/icons/delete.png') }}" alt="Delete">--}}
-{{--                        </button>--}}
-
-{{--                        <x-popup-delete--}}
-{{--                            id="deleteAuthor{{ $author->id }}"--}}
-{{--                            title="Удаление автора"--}}
-{{--                            body="автора {{ $author->name }}?"--}}
-
-{{--                        />--}}
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        @endif--}}
     </div>
 
 </x-layout>

@@ -3,19 +3,6 @@
     <x-search search="Любимого автора" />
 
     <div class="container">
-
-        {{-- Button --}}
-        <div class="row mt-5 bg-light rounded p-0 p-md-4">
-            <div class="col-12">
-                <div class="d-flex justify-content-start align-items-center">
-                    <button class="btn btn-info m-2 p-1 pb-1" data-bs-toggle="modal" data-bs-target="#createAuthor">
-                        <img class="icon-btn" src="{{ asset('img/icons/add.png') }}" alt="Create">
-                    </button>
-
-                    <x-popup-create id="createAuthor" title="Создание автора" />
-                </div>
-            </div>
-        </div>
         <div id="authors-container">
             {{-- Content --}}
             @if($authors->isEmpty())

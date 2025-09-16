@@ -3,25 +3,25 @@
     <x-search search="Любимую книгу" />
     <div class="container">
 
-        @if($books)
-            <div class="row mt-5 bg-light rounded p-4">
-                <div class="col-12">
-                    <div class="button-group d-flex justify-content-start align-items-center">
-                        <!-- Create -->
-                        <div class="col-9 button-group d-flex justify-content-start align-items-center">
-                            <button class="btn btn-info m-2 p-1 pb-1" data-bs-toggle="modal" data-bs-target="#createBook">
-                                <img class="icon-btn" src="{{asset("img/icons/add.png")}}" alt="Create">
-                            </button>
+{{--        @if($books)--}}
+{{--            <div class="row mt-5 bg-light rounded p-4">--}}
+{{--                <div class="col-12">--}}
+{{--                    <div class="button-group d-flex justify-content-start align-items-center">--}}
+{{--                        <!-- Create -->--}}
+{{--                        <div class="col-9 button-group d-flex justify-content-start align-items-center">--}}
+{{--                            <button class="btn btn-info m-2 p-1 pb-1" data-bs-toggle="modal" data-bs-target="#createBook">--}}
+{{--                                <img class="icon-btn" src="{{asset("img/icons/add.png")}}" alt="Create">--}}
+{{--                            </button>--}}
 
-                            <x-popup-create
-                                id="createBook"
-                                title="Создание книги"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
+{{--                            <x-popup-create--}}
+{{--                                id="createBook"--}}
+{{--                                title="Создание книги"--}}
+{{--                            />--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        @endif--}}
 
         <!-- AJAX -->
         <div id="books-container">

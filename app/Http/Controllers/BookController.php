@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Interfaces\BookServiceInterface;
 use App\Models\Author;
+
 use App\Models\Book;
-use App\Models\Genre;
-use App\Services\BookService;
 use Illuminate\Routing\Controller;
 use Exception;
 use Illuminate\Support\Collection;
@@ -21,54 +20,26 @@ class BookController extends Controller
 
     public function index()
     {
-        try {
-            $books = $this->getSixBooks();
+        $books = $this->getAllBooks();
 
-            $authors = Author::with('books')->get()
-                ->sortByDesc(fn($author) => $author->books->count())
-                ->take(6);
-
-        } catch (\Exception $e) {
-            $books = collect();
-            $authors = collect();
-
-            return view('index', [
-                'books' => $books,
-                'authors' => $authors,
-                'error' => $e->getMessage()
-            ]);
-        }
-
-        return view('index', [
-            'books' => $books,
-            'authors' => $authors
-        ]);
+        return view('index', ['books'=>compact('books') , 'authors' => Author::all(),'error'=>'Нет книг!']);
     }
 
     function getAllBooks()
     {
-        $books = $this->bookService->getPaginatedBooks(2);
+        $books = $this->bookService->getPaginatedBooks(12);
 
 
         return view('books', ['books' => $books]);
     }
 
-    function  getSixBooks()
+    public function getBook($id)
     {
-        $books = Book::query()->limit(6)->get();
-
-        if($books->isEmpty())
-            throw new Exception("No books found");
-
-        return $books;
-    }
-
-    function getBook($id)
-    {
-        $book = Book::all()->where('id', $id)->first();
+        $book = Book::find($id);
 
         return view('singleViews.book', ['book' => $book]);
-
     }
+
+
 
 }

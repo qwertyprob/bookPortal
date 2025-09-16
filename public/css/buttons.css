@@ -166,4 +166,29 @@
     background-color: var(--pink-color) !important;
     border-color: var(--pink-color) !important;
 }
+/* Success - обновлённый */
+.btn.btn-success {
+    color: white;
+    background-color: #28a745; /* мягкий насыщенный зелёный */
+    border: 2px solid #28a745 !important;
+    font-family: Arial !important;
+    font-size: 1.3em;
+    height: auto;
+    transition: all 0.2s ease;
+}
+
+.btn.btn-success:hover {
+    background-color: #3ec28d; /* более светлый, приятный оттенок при hover */
+    border: 2px solid #3ec28d !important;
+    color: white;
+}
+
+.btn.btn-success:active {
+    background-color: #1e7e57; /* чуть темнее для эффекта нажатия */
+    border: 2px solid #1e7e57 !important;
+    color: white;
+    transform: scale(0.97); /* лёгкое вдавливание */
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.12);
+}
+
 

@@ -23,7 +23,9 @@ class BookData
         $this->authors = $book->authors->pluck('id')->toArray();
     }
 
-    public function getId(): int
+
+
+        public function getId(): int
     {
         return $this->id;
     }

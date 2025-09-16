@@ -32,6 +32,7 @@
         <ul class="dropdown-menu"style="min-width: 200px;" aria-labelledby="userDropdown">
           <li><a class="dropdown-item" href="/login">Войти</a></li>
           <li><a class="dropdown-item" href="/register">Регистрация</a></li>
+            <li><a class="dropdown-item" href="/admin">Панель</a></li>
         </ul>
       </div>
     </div>

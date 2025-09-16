@@ -7,12 +7,12 @@
                 <form class="p-3 bg-light rounded">
 
                     <div class="mb-3">
-                        <label for="email" class="form-label">E-mail</label>
+                        <label for="email" style="color: var(--pink-color)" class="form-label">E-mail</label>
                         <input type="email" class="form-control" id="email">
                     </div>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">Пароль</label>
+                        <label for="password" style="color: var(--pink-color)" class="form-label">Пароль</label>
                         <input type="password" class="form-control" id="password">
                     </div>
 

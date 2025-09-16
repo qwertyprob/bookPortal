@@ -37,6 +37,7 @@ class BookService implements BookServiceInterface
 
         $paginator->setCollection($booksDTO);
 
+
         return $paginator;
     }
 
