@@ -1,7 +1,7 @@
 <x-admin-layout title="Books">
 
     <div class="add-button-container mt-3 mb-4 w-100">
-        <button class="btn btn-success w-100 d-flex justify-content-around" data-bs-toggle="modal"
+        <button class="btn btn-info w-100 d-flex justify-content-around" data-bs-toggle="modal"
                 data-bs-target="#createBookModal">
             <span class="icon fs-2"><i class="bi bi-cloud-plus"></i></span>
         </button>

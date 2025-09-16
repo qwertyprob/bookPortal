@@ -10,7 +10,7 @@
 
     <!-- основное меню -->
     <nav class="nav flex-column mt-3 flex-grow-1">
-        <a class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}" href="/admin/dashboard">
+        <a class="nav-link {{ request()->is('admin/dashboard*') ? 'active' : '' }}" href="/admin/dashboard">
             <span class="icon"><i class="bi bi-grid"></i></span>
             <span class="description">Dashboard</span>
         </a>

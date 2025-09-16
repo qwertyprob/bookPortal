@@ -29,62 +29,80 @@
                                    <label class="form-label">Авторы</label>
                                    <input class="form-control" name="authors" value="{{$item->authors()->pluck('name')->implode(',') }}">
                                </div>
-                               <div class="form-group mb-3 ">
-                                   <label class="form-label">Жанры:</label>
-                                   <div class="d-flex mb-2">
-                                       <input type="text" class="form-control me-2" id="genreInput" placeholder="Добавить жанр">
-                                       <button type="button" class="btn btn-success" onclick="addGenre()">+</button>
-                                   </div>
-                                   <ul class="list-group" id="genreList">
-                                       @foreach($item->genres as $genre)
-                                           <li class="list-group-item d-flex justify-content-between align-items-center">
-                                               <span>{{ $genre->name }}</span>
-                                               <button type="button" class="btn btn-sm btn-danger">-</button>
-                                           </li>
-                                       @endforeach
-                                   </ul>
+                           <div class="form-group mb-3">
+                               <label class="form-label">Жанры:</label>
+
+                               <!-- Добавление жанра -->
+                               <div class="input-group mb-3">
+                                   <input type="text" class="form-control " id="genreInput" placeholder="Введите жанр...">
+                                   <button class="btn btn-success p-0 px-2" type="button" onclick="addGenre()">
+                                       <i class="bi bi-plus-lg"></i>
+                                   </button>
                                </div>
 
 
-                               <div class="form-group mb-2">
+                               <!-- Список жанров -->
+                               <div class="genre-list ">
+                                   @foreach($item->genres as $genre)
+                                       <div class="d-flex justify-content-between align-items-center bg-light border rounded px-3 py-2 mb-2 shadow-sm">
+                                            <span class="fs-5 text-dark" style="font-family: Caveat, cursive;">
+                                                {{ $genre->name }}
+                                            </span>
+                                           <button type="button" class="btn btn-sm btn-outline-danger">
+                                               <i class="bi bi-x-lg"></i>
+                                           </button>
+                                       </div>
+                                   @endforeach
+                               </div>
+                           </div>
+
+
+
+                           <div class="form-group mb-2">
                                    <label class="form-label">Ссылка на картинку</label>
                                    <input class="form-control" name="img" value="{{ $item->cover_image }}">
                                </div>
 
                                <div class="form-group mb-2 w-100">
                                    <label class="form-label">Описание</label>
-                                   <textarea class="form-control" name="description"
+                                   <textarea class="form-control" name="description" rows="6"
                                    >{{ $item->description }} </textarea>
                                </div>
-
-
                        @else
-
                                <div class="form-group mb-2">
                                    <label class="form-label">Имя автора</label>
                                    <input class="form-control" name="name" value="{{ $item->name }}">
                                </div>
 
-                               <div class="form-group mb-3 ">
+                               <div class="form-group mb-3">
                                    <label class="form-label">Книги:</label>
-                                   <div class="d-flex mb-2">
-                                       <input type="text" class="form-control me-2" id="bookInput" placeholder="Добавить книгу">
-                                       <button type="button" class="btn btn-success" onclick="addBook()"> + </button>
-                                   </div>
-                                   <ul class="list-group" id="bookList">
-                                       @foreach($item->books as $book)
-                                           <li class="list-group-item d-flex justify-content-between align-items-center">
-                                               <span>{{ $book->title }}</span>
-                                               <button type="button" class="btn btn-sm btn-danger">-</button>
-                                           </li>
-                                       @endforeach
-                                   </ul>
-                               </div>
 
+                                   <!-- Добавление книги -->
+                                   <div class="input-group mb-3">
+                                       <input type="text" class="form-control " id="bookInput" placeholder="Введите жанр...">
+                                       <button class="btn btn-success p-0 px-2" type="button" onclick="addBook()">
+                                           <i class="bi bi-plus-lg"></i>
+                                       </button>
+                                   </div>
+
+                                   <!-- Список книг -->
+                                   <div class="genre-list">
+                                       @foreach($item->books as $book)
+                                           <div class="d-flex justify-content-between align-items-center bg-light border rounded px-3 py-2 mb-2 shadow-sm">
+                                                <span class="fs-5 text-dark" style="font-family: Caveat, cursive;">
+                                                    {{ $book->title }}
+                                                </span>
+                                               <button type="button" class="btn btn-sm btn-outline-danger">
+                                                   <i class="bi bi-x-lg"></i>
+                                               </button>
+                                           </div>
+                                       @endforeach
+                                   </div>
+                               </div>
 
                                <div class="form-group mb-2">
                                    <label class="form-label">Биография автора</label>
-                                   <textarea class="form-control" name="bio"
+                                   <textarea class="form-control" name="bio" rows="6"
                                    >{{ $item->bio }} </textarea>
                                </div>
 

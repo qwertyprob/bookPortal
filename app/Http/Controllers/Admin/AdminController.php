@@ -11,7 +11,11 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $booksCount = Book::count();
+        $authorsCount = Author::count();
+        $genresCount = Genre::count();
+
+        return view('admin.dashboard', compact('booksCount', 'authorsCount', 'genresCount'));
     }
     public function books() {
         $allAuthors = Author::all(); // для select2

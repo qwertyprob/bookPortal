@@ -20,9 +20,9 @@ class BookController extends Controller
 
     public function index()
     {
-        $books = $this->getAllBooks();
+        $books = Book::all()->take(6);
 
-        return view('index', ['books'=>compact('books') , 'authors' => Author::all(),'error'=>'Нет книг!']);
+        return view('index', ['books'=>$books , 'authors' => Author::all()->take(6),'error'=>'Нет книг!']);
     }
 
     function getAllBooks()

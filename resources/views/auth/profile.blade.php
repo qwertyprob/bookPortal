@@ -16,10 +16,6 @@
                         <input type="email" class="form-control" id="email">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="password" class="form-label" style="color: var(--pink-color)">Пароль</label>
-                        <input type="password" class="form-control" id="password">
-                    </div>
 
                     <div class="mb-3 mt-3">
                         <ul class="list-group d-flex flex-column flex-md-row gap-2 gap-md-4 justify-content-between"

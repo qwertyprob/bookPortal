@@ -5,11 +5,12 @@
 @import url("components.css");
 @import url("responsive.css");
 
-
-
-.sidebar{
+/* ==============================
+   SIDEBAR
+============================== */
+.sidebar {
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     height: 100%;
     width: 20em;
@@ -17,98 +18,106 @@
     background-color: var(--blue-color-) !important;
     transition: width 0.3s;
 }
-.sidebar .nav-link i{
-    font-size: 20px;
-}
-.sidebar .nav-link{
+
+.sidebar .nav-link {
     display: flex;
     align-items: center;
     gap: 20px;
     padding: 10px 20px;
     color: var(--pink-color);
 }
+
+.sidebar .nav-link i {
+    font-size: 20px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link:active,
+.sidebar .nav-link:focus {
+    background-color: #82abca;
+    color: white;
+}
+
 .nav-link.active {
     background-color: #82abca;
     color: white;
 }
-    .sidebar .nav-link:hover,
-    .sidebar .nav-link:active,
-    .sidebar .nav-link:focus
-    {
-        background-color: #82abca;
-        color: white;
-    }
 
-.sidebar .description{
-font-size: 20px;
-
-
+.sidebar .description {
+    font-size: 20px;
 }
 
-.sidebar .sub-menu{
+.sidebar .sub-menu {
     background-color: var(--pink-color);
 }
-.sidebar .sub-menu a{
+
+.sidebar .sub-menu a {
     color: white !important;
     background-color: #8ebbdc;
     padding-left: 40px !important;
 }
 
-    .sidebar .sub-menu a:hover,
-    .sidebar .sub-menu a:focus,
-    .sidebar .sub-menu a:active
-    {
-        color: white !important;
-
-    }
-
-.main-content{
-    margin-left: 20em;
-    padding: 5em !important;
+.sidebar .sub-menu a:hover,
+.sidebar .sub-menu a:focus,
+.sidebar .sub-menu a:active {
+    color: white !important;
 }
 
+/* ==============================
+   MAIN CONTENT
+============================== */
+.main-content {
+    margin-left: 20em;
+    padding: 2em !important;
+    transition: width 0.3s;
 
+}
 
-
-
-@media(max-width: 900px){
-    .sidebar{
+/* ==============================
+   MEDIA QUERIES
+============================== */
+@media (max-width: 900px) {
+    .sidebar {
         width: 60px;
     }
-    .sidebar .description{
+
+    .sidebar .description {
         display: none;
     }
-    .sidebar .nav-link{
+
+    .sidebar .nav-link {
         justify-content: center;
     }
-    .sidebar .sub-menu .nav-link{
+
+    .sidebar .sub-menu .nav-link {
         padding-left: 0;
     }
-    .main-content{
-        margin: 0!important;
-        margin-left:60px !important;
-        padding: 0 !important;
 
-
-    }
-    .sidebar .sub-menu a{
-
+    .sidebar .sub-menu a {
         padding-left: 20px !important;
     }
 
-    .admin-content{
-
-        padding: 20px !important;
+    .main-content {
+        margin: 0 !important;
+        margin-left: 60px !important;
+        padding: 0 !important;
+        transition: width 0.3s;
 
     }
 
-    .logo-string{
-        display:none;
+    .admin-content {
+        padding: 5px !important;
+
     }
 
+    .logo-string {
+        display: none;
+    }
 }
 
-/* Bootstrap modal fix для iOS */
+/* ==============================
+   BOOTSTRAP MODAL FIX (iOS)
+============================== */
 .modal {
     z-index: 1050 !important; /* поверх sidebar */
 }
@@ -117,35 +126,37 @@ font-size: 20px;
     z-index: 1040 !important;
 }
 
-/* iOS Safari fix */
-/*@supports (-webkit-overflow-scrolling: touch) {*/
-/*    body.modal-open {*/
-/*        position: absolute !important;*/
-/*        overflow: hidden !important;*/
-/*        width: 100% !important;*/
-/*    }*/
-/*    .modal-backdrop {*/
-/*        display: none !important;*/
-/*    }*/
-/*    body.modal-open {*/
-/*        overflow-x: auto !important;*/
-/*        overflow-y: hidden !important; !* блокируем только вертикаль *!*/
-/*        position: static !important;   !* убираем фиксированное позиционирование *!*/
-/*    }*/
-/*    .sidebar{*/
-/*        z-index: 12 !important;*/
-/*    }*/
-/*    .modal {*/
-/*        z-index: 9999 !important; !* поверх всего *!*/
-/*    }*/
+/* ==============================
+   SAFARI iOS FIX (закомментировано)
+============================== */
+/*
+@supports (-webkit-overflow-scrolling: touch) {
+    body.modal-open {
+        position: absolute !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
 
-/*    .modal-backdrop {*/
-/*        z-index: 9998 !important; !* затемнение ниже модалки *!*/
-/*    }*/
+    .modal-backdrop {
+        display: none !important;
+    }
 
-/*}*/
+    body.modal-open {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;  !* блокируем только вертикаль *!
+        position: static !important;    !* убираем фиксированное позиционирование *!
+    }
 
+    .sidebar {
+        z-index: 12 !important;
+    }
 
+    .modal {
+        z-index: 9999 !important;  !* поверх всего *!
+    }
 
-
-
+    .modal-backdrop {
+        z-index: 9998 !important;  !* затемнение ниже модалки *!
+    }
+}
+*/

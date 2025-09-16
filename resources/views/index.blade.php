@@ -4,38 +4,46 @@
 
 
     <div class="container">
-        <div class="row mt-5 mb-5 g-2">
-            <!-- 1 блок -->
-            <div class="col-12">
-                <div class="bg-light rounded p-3 align-items-center hover-block position-relative">
-                    <h1 class="text-center">Наши книги</h1>
-                    <a href="/books" class="stretched-link"></a>
-                </div>
+
+        @if($authors == null)
+            <h1>{{$error}}</h1>
+        @else
+        <h1 class="text-start mt-3">Популярные книги:</h1>
+            <div class="row g-3 mb-3">
+                @foreach($books as $book)
+                    <div class="col-6 col-md-6 col-lg-2">
+                        <div class="book-block bg-light p-3 rounded hover position-relative">
+                            <div class="d-flex flex-column pt-3 align-items-center">
+                                <img src="{{$book->cover_image}}" class="book-image">
+                                <p class="text-start py-4"> {{$book->title}}</p>
+                            </div>
+                            <a href="/book/{{$book->id}}" class="stretched-link"></a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
+        @endif
+        <h1 class="text-start mt-3">Популярные Авторы:</h1>
+        @if($authors == null)
+            <h1>{{$error}}</h1>
+        @else
+            <div class="row g-3 mb-3">
+                @foreach($authors as $author)
+                    <div class="col-6 col-md-6 col-lg-2">
+                        <div class="book-block bg-light p-3 rounded hover position-relative">
+                            <div class="d-flex flex-column pt-3 align-items-center justify-content-center">
+                                <img src="{{$author->portrait}}" class="book-image rounded">
+                            </div>
+                            <div class="py-4" style="height: 15px !important;">
+                                <p class="text-start "> {{$author->name}}</p>
+                            </div>
 
-            <!-- 2 блок -->
-            <div class="col-12 col-md-6">
-                <div class="bg-light rounded hover-block w-100 h-100 d-flex flex-column justify-content-between position-relative p-3 pb-0 mb-0">
-                    <h1 class="text-center my-3">Наши авторы</h1>
-                    <a href="/authors" class="stretched-link"></a>
-                </div>
+                            <a href="/author/{{$author->id}}" class="stretched-link"></a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-
-            <!-- 3 блок -->
-            <div class="col-12 col-md-6">
-                <div class="bg-light rounded hover-block w-100 h-100 d-flex flex-column justify-content-between position-relative p-3 pb-0 mb-0">
-                    <h1 class="text-center my-3">О нас</h1>
-                    <a href="/about" class="stretched-link"></a>
-                </div>
-            </div>
-        </div>
-
-        <h1 class="text-start">Популярные книги:</h1>
-
-        нет книг
-
-        <h1 class="text-start">Популярные Авторы:</h1>
-        нет авторов
+        @endif
         <!-- Блок с цитатой -->
         <div class="row rounded bg-white mt-5 ">
             <hr>

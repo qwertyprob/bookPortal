@@ -22,20 +22,37 @@
       </a>
     </div>
 
-    <!-- Правая группа (профиль / дропдаун) -->
-    <div class="nav-group-right pe-3">
-      <div class="dropdown">
-        <a class="nav-item dropdown-toggle" href="/profile" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fas fa-user"></i>
-          <span class="nav-text">Гость</span>
-        </a>
-        <ul class="dropdown-menu"style="min-width: 200px;" aria-labelledby="userDropdown">
-          <li><a class="dropdown-item" href="/login">Войти</a></li>
-          <li><a class="dropdown-item" href="/register">Регистрация</a></li>
-            <li><a class="dropdown-item" href="/admin">Панель</a></li>
-        </ul>
+      <!-- Правая группа (профиль / дропдаун) -->
+      <div class="nav-group-right pe-3">
+          <div class="dropdown">
+              <a class="nav-item  {{ Request::is('profile*') ? 'active' : '' }}
+               dropdown-toggle d-flex align-items-center text-decoration-none" href="#"
+                 id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <!-- Аватар с иконкой Bootstrap -->
+                  <i class="fas fa-user"></i> <span class="nav-text"></span>
+                  <span class="nav-text fw-medium">Гость</span>
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="userDropdown" style="min-width: 200px;">
+                  <li>
+                      <a class="dropdown-item d-flex align-items-center" href="/login">
+                          <i class="bi bi-box-arrow-in-right me-2"></i> Войти
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item d-flex align-items-center" href="/register">
+                          <i class="bi bi-person-plus me-2"></i> Регистрация
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item d-flex align-items-center" href="/admin/dashboard">
+                          <i class="bi bi-speedometer2 me-2"></i> Панель
+                      </a>
+                  </li>
+              </ul>
+          </div>
       </div>
-    </div>
+
   </div>
   </div>
 </div>
