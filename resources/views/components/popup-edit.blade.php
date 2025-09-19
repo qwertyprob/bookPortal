@@ -3,6 +3,8 @@
     'title' => 'Подтверждение',
     'item' => null,
     'route' => '#',
+    'allGenres' =>null,
+    'allAuthors' => null
 ])
 
 <!-- Modal -->
@@ -25,35 +27,33 @@
                                    <label class="form-label">Название</label>
                                    <input class="form-control" name="title" value="{{ $item->title }}">
                                </div>
-                               <div class="form-group mb-2">
-                                   <label class="form-label">Авторы</label>
-                                   <input class="form-control" name="authors" value="{{$item->authors()->pluck('name')->implode(',') }}">
-                               </div>
+
+                           <div class="form-group mb-3">
+                               <label class="form-label">Авторы:</label>
+
+                               <!-- Список авторов -->
+                               @php
+                                   $authors = $item->authors;
+                                   // Берём все ID жанров для selected
+                                   $selectedAuthors = $authors->pluck('id')->toArray();
+                               @endphp
+
+                               <x-selector id="{{$item->id}}" :items="$authors" :selected="$selectedAuthors">
+                               </x-selector>
+                           </div>
+
                            <div class="form-group mb-3">
                                <label class="form-label">Жанры:</label>
 
-                               <!-- Добавление жанра -->
-                               <div class="input-group mb-3">
-                                   <input type="text" class="form-control " id="genreInput" placeholder="Введите жанр...">
-                                   <button class="btn btn-success p-0 px-2" type="button" onclick="addGenre()">
-                                       <i class="bi bi-plus-lg"></i>
-                                   </button>
-                               </div>
-
-
                                <!-- Список жанров -->
-                               <div class="genre-list ">
-                                   @foreach($item->genres as $genre)
-                                       <div class="d-flex justify-content-between align-items-center bg-light border rounded px-3 py-2 mb-2 shadow-sm">
-                                            <span class="fs-5 text-dark" style="font-family: Caveat, cursive;">
-                                                {{ $genre->name }}
-                                            </span>
-                                           <button type="button" class="btn btn-sm btn-outline-danger">
-                                               <i class="bi bi-x-lg"></i>
-                                           </button>
-                                       </div>
-                                   @endforeach
-                               </div>
+                               @php
+                                   $genres = $item->genres;
+                                   // Берём все ID жанров для selected
+                                   $selectedGenres = $genres->pluck('id')->toArray();
+                               @endphp
+
+                               <x-selector id="genres{{$item->id}}" :items="$genres" :selected="$selectedGenres">
+                               </x-selector>
                            </div>
 
 

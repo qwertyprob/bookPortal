@@ -76,6 +76,10 @@
                         title="Удаление автора"
                         body="автора {{ $author->name }}?"
                     />
+
+                    <x-popup-create id="Author" title="Создание автора" :books="$books"
+                    />
+
                 @endpush
             @endforeach
             </tbody>

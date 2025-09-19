@@ -4,6 +4,7 @@
 @import url("buttons.css");
 @import url("components.css");
 @import url("responsive.css");
+@import url("selector.css");
 
 /* ==============================
    SIDEBAR
@@ -160,3 +161,15 @@
     }
 }
 */
+
+
+input{
+    border: none!important;
+    box-shadow: 3px 1px 1px lightblue;
+
+}
+textarea{
+    border: none!important;
+    box-shadow: 1px 1px 1px lightblue;
+
+}

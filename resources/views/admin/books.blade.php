@@ -70,13 +70,13 @@
                     <x-popup-edit
                         id="editBook{{ $book->id }}"
                         title="Редактирование книги"
-                        :item="$book"
-                    />
+                        :item="$book"/>
                     <x-popup-delete
                         id="deleteBook{{ $book->id }}"
                         title="Удаление книги"
                         body="книгу {{ $book->title }}?"
                     />
+                    <x-popup-create id="Book" title="Создание книги" :genres="$allGenres" :authors="$allAuthors"/>
                 @endpush
             @endforeach
             </tbody>

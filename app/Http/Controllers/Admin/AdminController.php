@@ -31,8 +31,12 @@ class AdminController extends Controller
 
 
     public function authors(){
-        $authors = Author::with(['books'])->paginate(10);
-        return view('admin.authors', compact('authors'));
+        $authors = Author::paginate(12);
+        $books = Book::all();
+        if($authors->isEmpty()|| $authors == null){
+            $authors = collect();
+        }
+        return view('admin.authors',['authors'=>$authors ,'status'=>'success','books'=>$books]);
     }
 
 }

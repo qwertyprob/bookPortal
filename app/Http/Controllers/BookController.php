@@ -22,6 +22,11 @@ class BookController extends Controller
     {
         $books = Book::all()->take(6);
 
+        foreach ($books as $book){
+            foreach ($book->authors as $author){
+                debugbar()->info($author->getAttributes());
+            }
+        }
         return view('index', ['books'=>$books , 'authors' => Author::all()->take(6),'error'=>'Нет книг!']);
     }
 
